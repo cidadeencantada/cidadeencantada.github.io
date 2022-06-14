@@ -1,0 +1,59 @@
+html {
+    background: rgb(236, 235, 160);
+    background-image: radial-gradient(#524658 20%, transparent 20%),
+    radial-gradient(#614461 20%, transparent 20%);
+    background-color: #062c5f;
+    background-position: 0 0, 50px 50px;
+    background-size: 100px 100px;
+}
+
+
+#Campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 9%;
+    min-width: 20%;
+    width: 80%;
+
+}
+
+#botao {
+    width: 25%;
+    height: 5vh;
+}
+
+
+
+#Div1,
+#Div2,
+#Div3 {
+    border: solid;
+    border-radius: 10%;
+    min-height: 250px;
+    height:40vh;
+    background: rgb(227, 171, 66);
+    box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5), /*Red Green Blue e Alfa(Opacidade)*/
+                inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 10px rgba(67, 67, 67, 0.5),
+                4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+#Div2div1,
+#Div1div1,
+#Div1div2,
+#Div3div1,
+#Div3div2 {
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+}
+
+#Div2div2 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-size: 150%;
+    width: 90%;
+    left: 4%;
+
+}

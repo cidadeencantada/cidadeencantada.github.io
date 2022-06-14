@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <title>Cidade Encantada</title>
+</head>
+<script>
+    let cartas = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"]; //Vai ignorar o último número para ser mais aleatório
+    let cartas2 = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"];
+    var qtdCartas = cartas.length - 1;
+    var r = qtdCartas;
+    function mudarcarta() {
+            //Não é >= para ignorar 1 valor, pois o math.random sempre deixa
+            //o último valor da lista por último
+            if (r > 0) {
+                nm = Math.floor(Math.random() * r);
+                var resultado = cartas[nm];
+                document.getElementById("Div2div2").innerHTML = resultado;
+                cartas.splice(nm, 1);
+                r -= 1
+            } else {
+                document.getElementById("Div1div1").innerHTML = "Acabou ";
+                document.getElementById("Div1div2").innerHTML = "as cartas";
+            }
+
+        }
+
+        function embaralhar() {
+            //cartas = []; //para zerar
+            //loop que utiliza o tamanho da copia da lista cartas
+            //para atribuir o valor ao index correto
+            for (i=0; i < cartas2.length; i++) {
+                cartas[i] = cartas2[i];
+            }
+            document.getElementById("Div1div1").innerHTML = "Sorte";
+            document.getElementById("Div1div2").innerHTML = "Ou Reves";
+            document.getElementById("Div2div2").innerHTML = "Vazio";
+            r = qtdCartas;
+
+        }
+
+</script>
+
+<body>
+    <button id="botao"onclick="embaralhar()">Embaralhar</button>
+    <div id="Campo">
+        <br><br>
+        <div id="Div1" onclick="mudarcarta()">
+            <br><br><br><br><br><br>
+            <div id="Div1div1">Sorte</div>
+            <div id="Div1div2">Ou Reves</div>
+        </div>
+        <br>
+        <div id="Div2">
+            <div id="Div2div1"><br>Carta Tirada</div>
+            <br><br>
+            <div id="Div2div2">Vazio</div>
+        </div>
+        <br>
+        <div id="Div3">
+            <div id="Div3div1"><br>Carta Tirada</div>
+            <br><br>
+            <div id="Div3div2">Vazio</div>
+            </div>
+    </div>
+
+</body>
+</html>
