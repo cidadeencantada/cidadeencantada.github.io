@@ -8,64 +8,120 @@
     <title>Cidade Encantada</title>
 </head>
 <script>
-    let cartas = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"]; //Vai ignorar o último número para ser mais aleatório
-    let cartas2 = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"];
-    var qtdCartas = cartas.length - 1;
-    var r = qtdCartas;
-    function mudarcarta() {
-            //Não é >= para ignorar 1 valor, pois o math.random sempre deixa
-            //o último valor da lista por último
-            if (r > 0) {
-                nm = Math.floor(Math.random() * r);
-                var resultado = cartas[nm];
-                document.getElementById("Div2div2").innerHTML = resultado;
-                cartas.splice(nm, 1);
-                r -= 1
-            } else {
-                document.getElementById("Div1div1").innerHTML = "Acabou ";
-                document.getElementById("Div1div2").innerHTML = "as cartas";
-            }
+//    let cartas = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"]; //Vai ignorar o último número para ser mais aleatório
+//    let cartas2 = ["O seu touro reprodutor ganhou o 1° premio na Exposição Nacional de Pecuária. Receba 15,00", "Em consequência da guerra o seu estoque  de mercadorias aumentou de valor. Receba 25,00", "Você comprou um décimo da Loteria Federal e ganhou a 'sorte grande'. Receba 5,00.", "Ao almoçar num restaurante chinês, achou uma pérola numa ôstra(!!!). Receba 20,00.", "Seu iate afundou, mas você tinha seguro! Receba $25.000.", "Apostou no cavalo azarão vencedor do grande prêmio Brasil.  Receba $100.000", "Venceu licitação para uma grande obra. Receba $150.000", "final"];
+//    var qtdCartas = cartas.length - 1;
+//    var r = qtdCartas;
+//    function mudarcarta() {
+//            //Não é >= para ignorar 1 valor, pois o math.random sempre deixa
+//            //o último valor da lista por último
+//            if (r > 0) {
+//                nm = Math.floor(Math.random() * r);
+//                var resultado = cartas[nm];
+//                document.getElementById("Div2div2").innerHTML = resultado;
+//                cartas.splice(nm, 1);
+//                r -= 1
+//            } else {
+//                document.getElementById("Div1div1").innerHTML = "Acabou ";
+//                document.getElementById("Div1div2").innerHTML = "as cartas";
+//            }
+//
+//        }
 
-        }
+        let perguntas = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        let perguntas2 = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        var qtdperguntas = perguntas.length - 1;
+        var r = qtdperguntas
+
+        function changeImage() {
+			var image = document.getElementById("pergunta");
+			//buscara no "source" do objeto "var image"
+			//se o nome combina com bulbon(lampada acessa), se combinar, desligar ela.
+			if(r > 0) {
+                nm = Math.floor(Math.random() * r);
+                var resultado = perguntas[nm];
+                image.src=resultado;
+                perguntas.splice(nm, 1);
+                r -= 1
+			} else {
+				image.src="img/acabou.png";
+			}
+		}
+
+        let mimicas = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        let mimicas2 = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        var qtdmimicas = mimicas.length - 1;
+        var x = qtdmimicas
+
+        function changeImage2() {
+			var image = document.getElementById("mimica");
+			//buscara no "source" do objeto "var image"
+			//se o nome combina com bulbon(lampada acessa), se combinar, desligar ela.
+			if(x > 0) {
+                nm = Math.floor(Math.random() * x);
+                var resultado = mimicas[nm];
+                image.src=resultado;
+                mimicas.splice(nm, 1);
+                x -= 1
+			} else {
+				image.src="img/acabou.png";
+			}
+		}
+
+        let desenhos = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        let desenhos2 = ["img/carta1.png","img/carta2.png","img/carta3.png","img/carta4.png","final"];
+        var qtddesenhos = desenhos.length - 1;
+        var y = qtddesenhos
+        function changeImage3() {
+			var image = document.getElementById("desenho");
+			//buscara no "source" do objeto "var image"
+			//se o nome combina com bulbon(lampada acessa), se combinar, desligar ela.
+			if(y > 0) {
+                nm = Math.floor(Math.random() * y);
+                var resultado = desenhos[nm];
+                image.src=resultado;
+                desenhos.splice(nm, 1);
+                y -= 1
+			} else {
+				image.src="img/acabou.png";
+			}
+		}
 
         function embaralhar() {
-            //cartas = []; //para zerar
-            //loop que utiliza o tamanho da copia da lista cartas
-            //para atribuir o valor ao index correto
-            for (i=0; i < cartas2.length; i++) {
-                cartas[i] = cartas2[i];
+            for (i=0; i < perguntas2.length; i++) {
+                perguntas[i] = perguntas2[i];
             }
-            document.getElementById("Div1div1").innerHTML = "Sorte";
-            document.getElementById("Div1div2").innerHTML = "Ou Reves";
-            document.getElementById("Div2div2").innerHTML = "Vazio";
-            r = qtdCartas;
-
+            var image = document.getElementById("pergunta");
+            image.src="img/carta1.png";
+            r = qtdperguntas;
+        }
+        function embaralhar2() {
+            for (i=0; i < mimicas2.length; i++) {
+                mimicas[i] = mimicas2[i];
+            }
+            var image = document.getElementById("mimica");
+            image.src="img/carta1.png";
+            x = qtdmimicas;
+        }
+        function embaralhar3() {
+            for (i=0; i < desenhos2.length; i++) {
+                desenhos[i] = desenhos2[i];
+            }
+            var image = document.getElementById("desenho");
+            image.src="img/carta1.png";
+            y = qtddesenhos;
         }
 
 </script>
 
 <body>
-    <button id="botao"onclick="embaralhar()">Embaralhar</button>
     <div id="Campo">
-        <br><br>
-        <div id="Div1" onclick="mudarcarta()">
-            <br><br><br><br><br><br>
-            <div id="Div1div1">Sorte</div>
-            <div id="Div1div2">Ou Reves</div>
-        </div>
-        <br>
-        <div id="Div2">
-            <div id="Div2div1"><br>Carta Tirada</div>
-            <br><br>
-            <div id="Div2div2">Vazio</div>
-        </div>
-        <br>
-        <div id="Div3">
-            <div id="Div3div1"><br>Carta Tirada</div>
-            <br><br>
-            <div id="Div3div2">Vazio</div>
-            </div>
+        <div class="teste"><h1>Pergunta  <button class="botao" onClick="embaralhar()">Embaralhar</button></h1></div>
+        <img src="img/carta1.png" id="pergunta" onClick="changeImage()">
+        <div class="teste"><h1>Mimíca  <button class="botao" onClick="embaralhar2()">Embaralhar</button></h1></div>
+        <img src="img/carta1.png" id="mimica" onClick="changeImage2()">
+        <div class="teste"><h1>Desenho  <button class="botao" onClick="embaralhar3()">Embaralhar</button></h1></div>
+        <img src="img/carta1.png" id="desenho" onClick="changeImage3()">
     </div>
-
 </body>
 </html>
